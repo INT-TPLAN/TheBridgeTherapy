@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://br7qmv4gqbpyo"]
+
+[ext_resource type="Script" uid="uid://cxuw0r4lkug64" path="res://scripts/标题界面.gd" id="1_bh58m"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="2_2ka8i"]
+[ext_resource type="Texture2D" uid="uid://d2h0kwdupvj51" path="res://art/imgs/ui/title.png" id="2_oyoiw"]
+[ext_resource type="Resource" uid="uid://dsmd13uwf56dr" path="res://Dialogues/dialogue1.tres" id="3_0or6w"]
+[ext_resource type="Texture2D" uid="uid://34utju0ft5py" path="res://art/imgs/ui/鼠标点击icon.png" id="3_2ka8i"]
+
+[sub_resource type="Resource" id="Resource_87038"]
+script = ExtResource("2_2ka8i")
+target_path = NodePath("../../Camera2D")
+function_name = "set_cam_pos"
+function_arguments = [Vector2(0, -1500)]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_oyoiw"]
+script = ExtResource("2_2ka8i")
+target_path = NodePath("../../对话")
+function_name = "update_dialogue_group"
+function_arguments = [ExtResource("3_0or6w")]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[node name="标题界面" type="Node2D"]
+scale = Vector2(2.0930226, 2.0930226)
+script = ExtResource("1_bh58m")
+init_event = Array[ExtResource("2_2ka8i")]([SubResource("Resource_87038")])
+begin_event = Array[ExtResource("2_2ka8i")]([SubResource("Resource_oyoiw")])
+
+[node name="Title" type="Sprite2D" parent="."]
+texture = ExtResource("2_oyoiw")
+region_enabled = true
+region_rect = Rect2(272.3159, 163.87778, 235.41202, 153.90573)
+
+[node name="鼠标点击icon" type="Sprite2D" parent="."]
+position = Vector2(-4.5388904, 59.483337)
+scale = Vector2(0.47777793, 0.47777793)
+texture = ExtResource("3_2ka8i")
+region_enabled = true
+region_rect = Rect2(606.5397, 187.33643, 102.90741, 84.23834)

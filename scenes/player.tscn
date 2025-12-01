@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://chj0pg48b3amp"]
+
+[ext_resource type="Texture2D" uid="uid://c2mvwm4x3iivu" path="res://art/imgs/玩家/身体.PNG" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://dt5qs1g4sf3nq" path="res://art/imgs/玩家/描边.PNG" id="1_dqkch"]
+[ext_resource type="Texture2D" uid="uid://6b7tp72h2a3g" path="res://art/imgs/玩家/眼睛.PNG" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://blchwfur2yaxr" path="res://art/imgs/玩家/鼻子.PNG" id="4_tuyoq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(41.538464, 61.538467)
+
+[node name="player" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(1.3, 1.3)
+
+[node name="Img0672" type="Sprite2D" parent="."]
+modulate = Color(0.7469797, 0.74697965, 0.74697965, 1)
+self_modulate = Color(1.1730844, 1.1730844, 1.1730844, 1)
+texture_filter = 1
+position = Vector2(0, 8)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("1_dqkch")
+offset = Vector2(219, -64)
+
+[node name="Img0673" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(219, -56)
+texture = ExtResource("1_3vyb7")
+
+[node name="face" type="Node2D" parent="."]
+
+[node name="Img0674" type="Sprite2D" parent="face"]
+modulate = Color(0.18014264, 0.9061791, 0.9999998, 1)
+texture_filter = 1
+position = Vector2(219, -56)
+texture = ExtResource("3_qlg0r")
+offset = Vector2(-1.26, 0)
+
+[node name="Img0675" type="Sprite2D" parent="face"]
+texture_filter = 1
+position = Vector2(219, -56)
+texture = ExtResource("4_tuyoq")
+offset = Vector2(-1.26, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5384617, 8.461541)
+shape = SubResource("RectangleShape2D_dqkch")

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="DialogueFunctionGroup" load_steps=7 format=3 uid="uid://calihsqsuie2"]
+
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="1_h8km3"]
+[ext_resource type="Script" uid="uid://nomcmdnh3leh" path="res://scripts/dialogue/dialogue_function_group.gd" id="2_04g8s"]
+[ext_resource type="Resource" uid="uid://ce1o0lui45th5" path="res://Dialogues/dialogue7.tres" id="2_8j874"]
+
+[sub_resource type="Resource" id="Resource_h8km3"]
+script = ExtResource("1_h8km3")
+target_path = NodePath("../player")
+function_name = "move_player_func"
+function_arguments = [Vector2(-248, 0), false]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_x50qe"]
+script = ExtResource("1_h8km3")
+target_path = NodePath("../CanvasLayer/对话")
+function_name = "update_dialogue_group"
+function_arguments = [ExtResource("2_8j874")]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_04g8s"]
+script = ExtResource("1_h8km3")
+target_path = NodePath("../player")
+function_name = "hide_all_dp_func"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("2_04g8s")
+functions = Array[ExtResource("1_h8km3")]([SubResource("Resource_h8km3"), SubResource("Resource_x50qe"), SubResource("Resource_04g8s")])
+metadata/_custom_type_script = "uid://nomcmdnh3leh"

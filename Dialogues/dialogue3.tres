@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=11 format=3 uid="uid://bhebm2fmy45l0"]
+
+[ext_resource type="Script" uid="uid://concvvxdbq5wd" path="res://scripts/dialogue/dialogue.gd" id="1_vlnpa"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="2_7mo8v"]
+[ext_resource type="Script" uid="uid://btdnko88a0l3m" path="res://scripts/dialogue/dialogue_group.gd" id="3_gr5q0"]
+
+[sub_resource type="Resource" id="Resource_vlnpa"]
+script = ExtResource("1_vlnpa")
+content = "你看到不少人已经动手"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_7mo8v"]
+script = ExtResource("1_vlnpa")
+content = "感觉不少桥精美而独特。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_8pfa0"]
+script = ExtResource("2_7mo8v")
+target_path = NodePath("../../Camera2D")
+function_name = "set_use_mouse_look"
+function_arguments = [false]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_gr5q0"]
+script = ExtResource("1_vlnpa")
+content = "那么 你想要建造一座怎样的桥？"
+functions = Array[ExtResource("2_7mo8v")]([SubResource("Resource_8pfa0")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_tr46u"]
+script = ExtResource("2_7mo8v")
+target_path = NodePath("../../environment")
+function_name = "dequeue_all_obs"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_fsdtl"]
+script = ExtResource("2_7mo8v")
+target_path = NodePath("../../player/心想")
+function_name = "show_bubble_func"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_8uv1r"]
+script = ExtResource("2_7mo8v")
+target_path = NodePath("../../player/互动icon")
+function_name = "show_tip"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("3_gr5q0")
+dialogues = Array[ExtResource("1_vlnpa")]([SubResource("Resource_vlnpa"), SubResource("Resource_7mo8v"), SubResource("Resource_gr5q0")])
+end_function = Array[ExtResource("2_7mo8v")]([SubResource("Resource_tr46u"), SubResource("Resource_fsdtl"), SubResource("Resource_8uv1r")])
+metadata/_custom_type_script = "uid://btdnko88a0l3m"

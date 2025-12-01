@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://u1lbyh2jscv1"]
+
+[ext_resource type="Texture2D" uid="uid://bx7lqcg5clbhf" path="res://art/imgs/心想.png" id="1_ur1wc"]
+[ext_resource type="Script" uid="uid://cxrit4cpaeb2g" path="res://scripts/ui/心想气泡.gd" id="2_y0wd2"]
+[ext_resource type="Texture2D" uid="uid://cncsfc8lqf5tw" path="res://art/imgs/环境/桥1-加深.png" id="2_yb82f"]
+
+[node name="心想" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(0.76923084, 0.76923084)
+texture = ExtResource("1_ur1wc")
+region_enabled = true
+region_rect = Rect2(459.3326, 356.6666, 190.00003, 194.66672)
+script = ExtResource("2_y0wd2")
+
+[node name="桥1加深" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.2999992, -7.799999)
+scale = Vector2(0.43991926, 0.43991932)
+texture = ExtResource("2_yb82f")
+region_enabled = true
+region_rect = Rect2(653.2192, 595.61316, 259.5451, 93.34515)

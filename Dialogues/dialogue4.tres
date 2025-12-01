@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=21 format=3 uid="uid://bovnvfk2rhiyc"]
+
+[ext_resource type="Script" uid="uid://concvvxdbq5wd" path="res://scripts/dialogue/dialogue.gd" id="1_w6dp6"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="2_4uja3"]
+[ext_resource type="Script" uid="uid://btdnko88a0l3m" path="res://scripts/dialogue/dialogue_group.gd" id="3_xhqp8"]
+
+[sub_resource type="Resource" id="Resource_w6dp6"]
+script = ExtResource("1_w6dp6")
+content = "你不愿接受这座桥吗？"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_4uja3"]
+script = ExtResource("1_w6dp6")
+content = "你觉得这座桥太平庸了"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_xhqp8"]
+script = ExtResource("1_w6dp6")
+content = "你告诉我："
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_c3rq1"]
+script = ExtResource("1_w6dp6")
+content = "“这座桥必须前所未有，惊艳所有人”"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_xhijt"]
+script = ExtResource("1_w6dp6")
+content = "“如果和别人设计的雷同，就是失败”"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_mvgvm"]
+script = ExtResource("1_w6dp6")
+content = "我喜欢你对于作品有着精益求精的追求。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_sywl1"]
+script = ExtResource("1_w6dp6")
+content = "可是"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_l87vw"]
+script = ExtResource("1_w6dp6")
+content = "桥  不过是一个过程。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_jeoep"]
+script = ExtResource("1_w6dp6")
+content = "搭建出一座 桥"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_bav55"]
+script = ExtResource("1_w6dp6")
+content = "远比搭建出一座  精美的桥重要。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_ryia0"]
+script = ExtResource("1_w6dp6")
+content = "所以"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_e1lbo"]
+script = ExtResource("1_w6dp6")
+content = "让我们先搭建起一座"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_d0pov"]
+script = ExtResource("1_w6dp6")
+content = "或许 平庸的桥吧。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_oy6gc"]
+script = ExtResource("1_w6dp6")
+content = "你不必去构想如何具体实现"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_71tfv"]
+script = ExtResource("1_w6dp6")
+content = "你只需要明白这是一座你力所能及可以完成的桥。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_tdilw"]
+script = ExtResource("2_4uja3")
+target_path = NodePath("../../player/互动icon")
+function_name = "show_tip"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_g37q5"]
+script = ExtResource("2_4uja3")
+target_path = NodePath("../../桥1")
+function_name = "set_is_building_bridge"
+function_arguments = [true]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("3_xhqp8")
+dialogues = Array[ExtResource("1_w6dp6")]([SubResource("Resource_w6dp6"), SubResource("Resource_4uja3"), SubResource("Resource_xhqp8"), SubResource("Resource_c3rq1"), SubResource("Resource_xhijt"), SubResource("Resource_mvgvm"), SubResource("Resource_sywl1"), SubResource("Resource_l87vw"), SubResource("Resource_jeoep"), SubResource("Resource_bav55"), SubResource("Resource_ryia0"), SubResource("Resource_e1lbo"), SubResource("Resource_d0pov"), SubResource("Resource_oy6gc"), SubResource("Resource_71tfv")])
+end_function = Array[ExtResource("2_4uja3")]([SubResource("Resource_tdilw"), SubResource("Resource_g37q5")])
+metadata/_custom_type_script = "uid://btdnko88a0l3m"

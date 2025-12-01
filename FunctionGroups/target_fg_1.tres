@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="DialogueFunctionGroup" load_steps=7 format=3 uid="uid://bq4mkfw8ov5qt"]
+
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="1_ccatx"]
+[ext_resource type="Resource" uid="uid://2ri5u2wrlfdl" path="res://Dialogues/dialogue2.tres" id="2_godyq"]
+[ext_resource type="Script" uid="uid://nomcmdnh3leh" path="res://scripts/dialogue/dialogue_function_group.gd" id="3_j6l5a"]
+
+[sub_resource type="Resource" id="Resource_6dbla"]
+script = ExtResource("1_ccatx")
+target_path = NodePath("../CanvasLayer/对话")
+function_name = "update_dialogue_group"
+function_arguments = [ExtResource("2_godyq")]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_ccatx"]
+script = ExtResource("1_ccatx")
+target_path = NodePath("../player")
+function_name = "move_player_func"
+function_arguments = [Vector2(-248, 0), false]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_godyq"]
+script = ExtResource("1_ccatx")
+target_path = NodePath("../桥1")
+function_name = "hide_bridge"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("3_j6l5a")
+functions = Array[ExtResource("1_ccatx")]([SubResource("Resource_6dbla"), SubResource("Resource_ccatx"), SubResource("Resource_godyq")])
+metadata/_custom_type_script = "uid://nomcmdnh3leh"

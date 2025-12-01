@@ -1,0 +1,407 @@
+[gd_scene load_steps=44 format=3 uid="uid://bjgrh0e0xqwsu"]
+
+[ext_resource type="Script" uid="uid://qug8kdma8t4t" path="res://scripts/camera.gd" id="1_ergv5"]
+[ext_resource type="PackedScene" uid="uid://dkainssorjvru" path="res://scenes/environment.tscn" id="2_gf7k8"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="3_uigeg"]
+[ext_resource type="Resource" uid="uid://b82gnrjnleb70" path="res://Dialogues/dialogue9.tres" id="4_uigeg"]
+[ext_resource type="PackedScene" uid="uid://cfr8wbgcyow2y" path="res://scenes/bridges/引力桥.tscn" id="5_g3u6g"]
+[ext_resource type="PackedScene" uid="uid://bvcv2pdqmtqej" path="res://scenes/bridges/桥1.tscn" id="6_5wxr1"]
+[ext_resource type="Resource" uid="uid://dclps1hi46nc2" path="res://Dialogues/dialogue5.tres" id="7_l71n0"]
+[ext_resource type="PackedScene" uid="uid://1j46gtlsa8jv" path="res://scenes/ui/dialogue_ui.tscn" id="8_cdt8n"]
+[ext_resource type="Resource" uid="uid://cv5b0nhw684fd" path="res://Dialogues/dialogue8.tres" id="8_gf7k8"]
+[ext_resource type="Shader" uid="uid://byrufrb8jl78b" path="res://art/shaders/vignetting.gdshader" id="9_twbvg"]
+[ext_resource type="Shader" uid="uid://dmdu6x8xedph8" path="res://art/shaders/grains.gdshader" id="10_x6l53"]
+[ext_resource type="Shader" uid="uid://bgxd7a064ujer" path="res://art/shaders/crt.gdshader" id="11_jsl4l"]
+[ext_resource type="Script" uid="uid://di5w1ndbhmk3c" path="res://scripts/过渡.gd" id="12_nwnyl"]
+[ext_resource type="PackedScene" uid="uid://chj0pg48b3amp" path="res://scenes/player.tscn" id="13_og0o1"]
+[ext_resource type="Script" uid="uid://cgtk1v2yy2m2o" path="res://scripts/player.gd" id="14_7r272"]
+[ext_resource type="Texture2D" uid="uid://ciroyqxieeu0q" path="res://art/imgs/fin.png" id="14_g3u6g"]
+[ext_resource type="Script" uid="uid://c31cdpwbk5y77" path="res://scripts/ui/fin.gd" id="15_5wxr1"]
+[ext_resource type="PackedScene" uid="uid://cdbr6dwq5usyd" path="res://scenes/bridges/death_platform.tscn" id="15_yo5f8"]
+[ext_resource type="Texture2D" uid="uid://du4icij7pobus" path="res://art/imgs/credit.png" id="16_5wxr1"]
+[ext_resource type="Texture2D" uid="uid://c5760xu4wdqx8" path="res://art/imgs/ui/按键提示1.png" id="16_t3681"]
+[ext_resource type="Script" uid="uid://xngndh4yx2pe" path="res://scripts/ui/按键提示1.gd" id="17_q5no5"]
+[ext_resource type="Texture2D" uid="uid://chdhktafxhee1" path="res://art/imgs/ui/鼠标icon.png" id="18_xybq0"]
+[ext_resource type="Script" uid="uid://biupx3jqfuiy3" path="res://scripts/ui/鼠标icon.gd" id="19_5uw5k"]
+[ext_resource type="PackedScene" uid="uid://u1lbyh2jscv1" path="res://scenes/ui/心想气泡.tscn" id="20_iwam8"]
+[ext_resource type="Resource" uid="uid://bovnvfk2rhiyc" path="res://Dialogues/dialogue4.tres" id="21_5u5uh"]
+[ext_resource type="Texture2D" uid="uid://h0sj77xyfkpr" path="res://art/imgs/ui/互动icon.png" id="22_a2nph"]
+[ext_resource type="Script" uid="uid://caxlfp62l7efo" path="res://scripts/ui/互动icon.gd" id="23_xatwe"]
+[ext_resource type="Texture2D" uid="uid://b1vwqshdghjss" path="res://art/imgs/ui/跳跃icon.png" id="24_c0oph"]
+[ext_resource type="Script" uid="uid://46rac14g66kh" path="res://scripts/ui/跳跃icon.gd" id="25_p1hnf"]
+[ext_resource type="PackedScene" uid="uid://dkjlbl1pv3qm1" path="res://scenes/终点.tscn" id="26_li34e"]
+[ext_resource type="Script" uid="uid://gphh4nlffm06" path="res://scenes/levels/thoughts.gd" id="28_gf7k8"]
+[ext_resource type="Resource" uid="uid://cy8dgqg47dbjd" path="res://FunctionGroups/target_fg_4.tres" id="28_uigeg"]
+
+[sub_resource type="Environment" id="Environment_syvye"]
+background_mode = 3
+background_energy_multiplier = 3.26
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 2.05
+glow_strength = 0.45
+glow_bloom = 1.0
+glow_blend_mode = 0
+adjustment_enabled = true
+adjustment_saturation = 1.86
+
+[sub_resource type="Resource" id="Resource_gf7k8"]
+script = ExtResource("3_uigeg")
+target_path = NodePath("../CanvasLayer/对话")
+function_name = "update_dialogue_group"
+function_arguments = [ExtResource("4_uigeg")]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_pwb5c"]
+script = ExtResource("3_uigeg")
+target_path = NodePath("../CanvasLayer/对话")
+function_name = "update_dialogue_group"
+function_arguments = [ExtResource("7_l71n0")]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6krm"]
+shader = ExtResource("9_twbvg")
+shader_parameter/vignette_intensity = 6.63
+shader_parameter/vignette_opacity = 0.07200000342
+shader_parameter/vignette_rgb = Color(0.72722083, 0.00045589448, 0.47618163, 0.31764707)
+
+[sub_resource type="Gradient" id="Gradient_0b2i4"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t6krm"]
+gradient = SubResource("Gradient_0b2i4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pcmnq"]
+shader = ExtResource("10_x6l53")
+shader_parameter/grain_amount = 0.0710000033725
+shader_parameter/grain_size = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypvfd"]
+shader = ExtResource("11_jsl4l")
+shader_parameter/exposure = 0.72600002796523
+shader_parameter/contrast = 1.59600005206
+shader_parameter/saturation = 0.482000022895
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 2.8010000855475
+shader_parameter/enable_posterize = true
+shader_parameter/color_levels = 8.0
+shader_parameter/dither_strength = 0.1510000071725
+shader_parameter/chrom_aberration = 0.194000009215
+shader_parameter/vignette_strength = 1.3530000642675
+shader_parameter/grain_strength = 0.25
+shader_parameter/tint_strength = 0.122000005795
+shader_parameter/scanline_density = 364.4650149370875
+shader_parameter/scanline_strength = 0.1350000064125
+shader_parameter/glitch_strength = 0.12
+shader_parameter/glitch_speed = 3.0
+shader_parameter/viewport_size_override = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_l7kj2"]
+script = ExtResource("3_uigeg")
+target_path = NodePath("../../CanvasLayer/对话")
+function_name = "update_dialogue_group"
+function_arguments = [ExtResource("21_5u5uh")]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l7kj2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_anuwc"]
+font_size = 31
+font_color = Color(0.90678895, 0.12601879, 0.27477482, 1)
+
+[node name="Lvl2" type="Node2D" groups=["lvl"]]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_syvye")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -64)
+position_smoothing_enabled = true
+script = ExtResource("1_ergv5")
+use_mouse_look = true
+
+[node name="bg" type="Node2D" parent="Camera2D"]
+visible = false
+position = Vector2(-9480, -5288)
+scale = Vector2(45.76211, 32.33743)
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/bg"]
+z_index = -2070
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 1160.0
+offset_bottom = 672.0
+
+[node name="environment" parent="." instance=ExtResource("2_gf7k8")]
+all_ob_showed_event = Array[ExtResource("3_uigeg")]([SubResource("Resource_gf7k8")])
+
+[node name="引力桥" parent="." instance=ExtResource("5_g3u6g")]
+position = Vector2(16, -56)
+force_strength = 300.0
+is_active = true
+
+[node name="桥1" parent="." instance=ExtResource("6_5wxr1")]
+position = Vector2(16, 162)
+end_func = Array[ExtResource("3_uigeg")]([SubResource("Resource_pwb5c")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(576, 324)
+transform = Transform2D(1, 0, 0, 1, 576, 324)
+
+[node name="对话" parent="CanvasLayer" instance=ExtResource("8_cdt8n")]
+texture_filter = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -576.0
+offset_top = -320.0
+offset_right = -576.0
+offset_bottom = -320.0
+grow_horizontal = 1
+grow_vertical = 1
+mouse_filter = 2
+main_dialogue = ExtResource("8_gf7k8")
+
+[node name="暗角" type="TextureRect" parent="CanvasLayer"]
+z_index = 65
+material = SubResource("ShaderMaterial_t6krm")
+offset_left = -584.0
+offset_top = -328.0
+offset_right = 576.0
+offset_bottom = 328.0
+scale = Vector2(1.0014558, 1)
+texture = SubResource("GradientTexture1D_t6krm")
+
+[node name="噪点" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_pcmnq")
+offset_left = -592.0
+offset_top = -340.0
+offset_right = 600.0
+offset_bottom = 348.0
+mouse_filter = 2
+
+[node name="crt" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_ypvfd")
+offset_left = -601.0
+offset_top = -346.0
+offset_right = 594.0
+offset_bottom = 352.0
+mouse_filter = 2
+
+[node name="过渡" type="ColorRect" parent="CanvasLayer"]
+offset_left = -587.0
+offset_top = -337.0
+offset_right = 590.0
+offset_bottom = 340.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("12_nwnyl")
+
+[node name="Fin" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(7, -2)
+texture = ExtResource("14_g3u6g")
+region_enabled = true
+region_rect = Rect2(688.7927, 297.39478, 180.89514, 137.84454)
+script = ExtResource("15_5wxr1")
+
+[node name="Credit" type="Sprite2D" parent="CanvasLayer/Fin"]
+modulate = Color(1, 1, 1, 0.5294118)
+position = Vector2(-442, 199)
+scale = Vector2(0.7824606, 0.7824606)
+texture = ExtResource("16_5wxr1")
+region_enabled = true
+region_rect = Rect2(239.95251, 441.92102, 330.88666, 285.98755)
+
+[node name="player" parent="." instance=ExtResource("13_og0o1")]
+position = Vector2(-248, 0)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("14_7r272")
+speed = 150.0
+jump_force = 200
+death_platform = ExtResource("15_yo5f8")
+
+[node name="按键提示1" type="Sprite2D" parent="player"]
+modulate = Color(0.93999994, 0.6, 1, 0.40784314)
+texture_filter = 1
+position = Vector2(3.0769234, -60.769238)
+scale = Vector2(0.76923084, 0.76923084)
+texture = ExtResource("16_t3681")
+region_enabled = true
+region_rect = Rect2(202.371, 184.384, 190.04, 101.605)
+script = ExtResource("17_q5no5")
+
+[node name="鼠标icon" type="Sprite2D" parent="player"]
+modulate = Color(1.4608843, 1.4608843, 1.4608843, 1)
+position = Vector2(0, -61.538467)
+scale = Vector2(0.76923084, 0.76923084)
+texture = ExtResource("18_xybq0")
+region_enabled = true
+region_rect = Rect2(355.01315, 176.72562, 106.09476, 100.17529)
+script = ExtResource("19_5uw5k")
+
+[node name="心想" parent="player" instance=ExtResource("20_iwam8")]
+position = Vector2(0, -92.30769)
+time_to_show_bridge = 1.0
+end_func = Array[ExtResource("3_uigeg")]([SubResource("Resource_l7kj2")])
+
+[node name="互动icon" type="Sprite2D" parent="player"]
+modulate = Color(1, 1, 1, 0.61960787)
+position = Vector2(-61.538467, 6.1538467)
+texture = ExtResource("22_a2nph")
+region_enabled = true
+region_rect = Rect2(447.1074, 185.0493, 94.25589, 95.16658)
+script = ExtResource("23_xatwe")
+
+[node name="跳跃icon" type="Sprite2D" parent="player"]
+position = Vector2(-1.5384638, -101.53845)
+scale = Vector2(0.6283321, 0.62833214)
+texture = ExtResource("24_c0oph")
+region_enabled = true
+region_rect = Rect2(510.10034, 179.0187, 117.24884, 101.07657)
+script = ExtResource("25_p1hnf")
+
+[node name="终点" parent="." instance=ExtResource("26_li34e")]
+position = Vector2(288, 88)
+collision_layer = 2
+collision_mask = 4
+target_function = ExtResource("28_uigeg")
+
+[node name="死亡边界" type="Area2D" parent="."]
+position = Vector2(-176.00002, 280.00003)
+scale = Vector2(1.3, 1.3)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="死亡边界"]
+shape = SubResource("WorldBoundaryShape2D_l7kj2")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="thoughts" type="Node2D" parent="." node_paths=PackedStringArray("texts")]
+visible = false
+position = Vector2(-200, -150)
+script = ExtResource("28_gf7k8")
+texts = [NodePath("Parallax2D/Label"), NodePath("Parallax2D/Label2"), NodePath("Parallax2D3/Label"), NodePath("Parallax2D3/Label2"), NodePath("Parallax2D4/Label"), NodePath("Parallax2D4/Label2"), NodePath("Parallax2D5/Label"), NodePath("Parallax2D5/Label2"), NodePath("Parallax2D6/Label"), NodePath("Parallax2D6/Label2"), NodePath("Parallax2D2/Label"), NodePath("Parallax2D2/Label2")]
+
+[node name="Parallax2D" type="Parallax2D" parent="thoughts"]
+scroll_scale = Vector2(0.2, 0.2)
+
+[node name="Label" type="Label" parent="thoughts/Parallax2D"]
+offset_left = 204.0
+offset_top = 158.0
+offset_right = 421.0
+offset_bottom = 203.0
+text = "为什么都比我好"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Label2" type="Label" parent="thoughts/Parallax2D"]
+offset_left = 722.0
+offset_top = 225.0
+offset_right = 939.0
+offset_bottom = 270.0
+text = "没有进步"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Parallax2D2" type="Parallax2D" parent="thoughts"]
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="thoughts/Parallax2D2"]
+offset_left = 67.0
+offset_top = 274.0
+offset_right = 284.0
+offset_bottom = 319.0
+text = "恨自己"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Label2" type="Label" parent="thoughts/Parallax2D2"]
+offset_left = 778.0
+offset_top = 143.0
+offset_right = 995.0
+offset_bottom = 188.0
+text = "不再优秀"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Parallax2D3" type="Parallax2D" parent="thoughts"]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="Label" type="Label" parent="thoughts/Parallax2D3"]
+offset_left = 444.0
+offset_top = 262.0
+offset_right = 661.0
+offset_bottom = 307.0
+text = "对不起"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Label2" type="Label" parent="thoughts/Parallax2D3"]
+offset_left = 887.0
+offset_top = 286.0
+offset_right = 1104.0
+offset_bottom = 331.0
+text = "孤独"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Parallax2D4" type="Parallax2D" parent="thoughts"]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="thoughts/Parallax2D4"]
+offset_left = 804.0
+offset_top = 362.0
+offset_right = 1021.0
+offset_bottom = 407.0
+text = "为什么都比我好"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Label2" type="Label" parent="thoughts/Parallax2D4"]
+offset_left = 95.0
+offset_top = 330.0
+offset_right = 312.0
+offset_bottom = 375.0
+text = "没有进步"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Parallax2D5" type="Parallax2D" parent="thoughts"]
+scroll_scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="thoughts/Parallax2D5"]
+offset_left = 284.0
+offset_top = 246.0
+offset_right = 501.0
+offset_bottom = 291.0
+text = "恨自己"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Label2" type="Label" parent="thoughts/Parallax2D5"]
+offset_left = 608.0
+offset_top = 445.0
+offset_right = 825.0
+offset_bottom = 490.0
+text = "不再优秀"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Parallax2D6" type="Parallax2D" parent="thoughts"]
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(-600, -50)
+
+[node name="Label" type="Label" parent="thoughts/Parallax2D6"]
+offset_left = 590.0
+offset_top = 124.0
+offset_right = 807.0
+offset_bottom = 169.0
+text = "对不起"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[node name="Label2" type="Label" parent="thoughts/Parallax2D6"]
+offset_left = 379.0
+offset_top = 346.0
+offset_right = 596.0
+offset_bottom = 391.0
+text = "孤独"
+label_settings = SubResource("LabelSettings_anuwc")
+
+[connection signal="hide_bubble" from="environment" to="player/心想" method="_on_environment_hide_bubble"]
+[connection signal="lvl2_end_trans_finished" from="CanvasLayer/过渡" to="CanvasLayer/Fin" method="_on_过渡_lvl_2_end_trans_finished"]
+[connection signal="show_crt" from="CanvasLayer/过渡" to="Camera2D" method="_on_过渡_show_crt"]
+[connection signal="player_moved" from="player" to="player/按键提示1" method="_on_player_player_moved"]
+[connection signal="do_flash" from="player/心想" to="environment" method="_on_心想_do_flash"]
+[connection signal="body_entered" from="死亡边界" to="player" method="_on_死亡边界_body_entered"]

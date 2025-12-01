@@ -1,0 +1,71 @@
+[gd_scene load_steps=14 format=3 uid="uid://8i522f4hj1fh"]
+
+[ext_resource type="Script" uid="uid://bit13wrk0mata" path="res://scripts/AudioManager.gd" id="1_8qd8g"]
+[ext_resource type="AudioStream" uid="uid://1oif4pngotcp" path="res://art/sound/dialogue/s1.ogg" id="2_kq7b2"]
+[ext_resource type="AudioStream" uid="uid://c3g8fxfbhl58l" path="res://art/sound/BlueDew.ogg" id="2_liach"]
+[ext_resource type="AudioStream" uid="uid://b25rq47rp0e72" path="res://art/sound/dialogue/s2.ogg" id="3_02gw7"]
+[ext_resource type="AudioStream" uid="uid://dkembxraj02y8" path="res://art/sound/dialogue/s3.ogg" id="4_ujhup"]
+[ext_resource type="AudioStream" uid="uid://wafskerq7obn" path="res://art/sound/dialogue/s4.ogg" id="5_064dn"]
+[ext_resource type="AudioStream" uid="uid://bny5gftvpo1pr" path="res://art/sound/dialogue/s5.ogg" id="6_ic5jq"]
+[ext_resource type="AudioStream" uid="uid://cw34rr7ufvaoh" path="res://art/sound/click.wav" id="7_02gw7"]
+[ext_resource type="AudioStream" uid="uid://cbe5cf4fs762p" path="res://art/sound/begin.ogg" id="8_ujhup"]
+[ext_resource type="AudioStream" uid="uid://cko310xc7lxme" path="res://art/sound/built.ogg" id="9_064dn"]
+[ext_resource type="AudioStream" uid="uid://ygg5nnep7ovr" path="res://art/sound/flash.ogg" id="10_ic5jq"]
+[ext_resource type="AudioStream" uid="uid://dg8k4qaliivwg" path="res://art/sound/died.ogg" id="11_if78k"]
+[ext_resource type="AudioStream" uid="uid://bun5q8t11ahmg" path="res://art/sound/jump.ogg" id="12_8igv3"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_8qd8g")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="S1" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("2_kq7b2")
+bus = &"SFX"
+
+[node name="S2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("3_02gw7")
+bus = &"SFX"
+
+[node name="S3" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_ujhup")
+bus = &"SFX"
+
+[node name="S4" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_064dn")
+bus = &"SFX"
+
+[node name="S5" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_ic5jq")
+bus = &"SFX"
+
+[node name="Click" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_02gw7")
+bus = &"SFX"
+
+[node name="Begin" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_ujhup")
+bus = &"SFX"
+
+[node name="Built" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_064dn")
+volume_db = 2.0
+bus = &"SFX"
+
+[node name="Flash" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("10_ic5jq")
+bus = &"SFX"
+
+[node name="Died" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("11_if78k")
+bus = &"SFX"
+
+[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("12_8igv3")
+
+[node name="BlueDew" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_liach")
+volume_db = -2.0
+autoplay = true
+bus = &"BGM"
+parameters/looping = true

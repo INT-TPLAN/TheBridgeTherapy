@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkjlbl1pv3qm1"]
+
+[ext_resource type="Script" uid="uid://3eujayao7vve" path="res://scripts/target.gd" id="1_7pa3c"]
+[ext_resource type="Texture2D" uid="uid://ctycsvdbpqlt2" path="res://art/imgs/终点.png" id="2_2urpq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tw4r"]
+size = Vector2(22, 77)
+
+[node name="终点" type="Area2D"]
+script = ExtResource("1_7pa3c")
+
+[node name="终点" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.8039216)
+z_index = -1
+texture_filter = 1
+position = Vector2(9, -12)
+scale = Vector2(1.2462686, 1.2462686)
+texture = ExtResource("2_2urpq")
+region_enabled = true
+region_rect = Rect2(1004.3327, 528.667, 67.33331, 78.66669)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -2.5)
+shape = SubResource("RectangleShape2D_5tw4r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

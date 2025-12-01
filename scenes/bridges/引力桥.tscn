@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfr8wbgcyow2y"]
+
+[ext_resource type="Texture2D" uid="uid://cciyxhggh2maj" path="res://art/imgs/环境/引力桥.png" id="1_vcnx5"]
+[ext_resource type="Script" uid="uid://bd11xfwap76fg" path="res://scripts/bridges/引力桥.gd" id="2_dksly"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcnx5"]
+radius = 96.98956
+
+[node name="引力桥" type="Sprite2D"]
+scale = Vector2(1.33, 1.33)
+texture = ExtResource("1_vcnx5")
+region_enabled = true
+region_rect = Rect2(665.7723, 420.0947, 238.0166, 240.7714)
+script = ExtResource("2_dksly")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vcnx5")

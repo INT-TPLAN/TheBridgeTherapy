@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=21 format=3 uid="uid://ce1o0lui45th5"]
+
+[ext_resource type="Script" uid="uid://concvvxdbq5wd" path="res://scripts/dialogue/dialogue.gd" id="1_i2lcv"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="2_i2vin"]
+[ext_resource type="Script" uid="uid://btdnko88a0l3m" path="res://scripts/dialogue/dialogue_group.gd" id="3_grqwk"]
+
+[sub_resource type="Resource" id="Resource_i2lcv"]
+script = ExtResource("1_i2lcv")
+content = "造“桥”就是这样"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_i2vin"]
+script = ExtResource("1_i2lcv")
+content = "只要你敢想敢做"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_grqwk"]
+script = ExtResource("1_i2lcv")
+content = "没有什么是不可能的。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_5sray"]
+script = ExtResource("1_i2lcv")
+content = "松乔"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_somvf"]
+script = ExtResource("1_i2lcv")
+content = "你所害怕的第一点"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_s74os"]
+script = ExtResource("1_i2lcv")
+content = "现在看来 似乎也并没有那么可怕了"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_uvpt3"]
+script = ExtResource("1_i2lcv")
+content = "不是么？"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_m40k2"]
+script = ExtResource("1_i2lcv")
+content = "对于恐惧"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_6cla2"]
+script = ExtResource("1_i2lcv")
+content = "你说过你总是想要逃避"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_wbme1"]
+script = ExtResource("1_i2lcv")
+content = "而相信你在这么多次的逃避中也发现了"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_wjhjv"]
+script = ExtResource("1_i2lcv")
+content = "逃避没法消除恐惧"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_mgx14"]
+script = ExtResource("1_i2lcv")
+content = "往往让你在某时某刻更加痛苦。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_cy418"]
+script = ExtResource("1_i2lcv")
+content = "那么深呼吸一下吧"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_yht0y"]
+script = ExtResource("1_i2lcv")
+content = "这一次我们不选择逃避"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_k8fik"]
+script = ExtResource("1_i2lcv")
+content = "如何？"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_5a2bw"]
+script = ExtResource("2_i2vin")
+target_path = NodePath("../../player/互动icon")
+function_name = "show_tip"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_wsjw7"]
+script = ExtResource("2_i2vin")
+target_path = NodePath("../过渡")
+function_name = "set_can_trans"
+function_arguments = [true]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("3_grqwk")
+dialogues = Array[ExtResource("1_i2lcv")]([SubResource("Resource_i2lcv"), SubResource("Resource_i2vin"), SubResource("Resource_grqwk"), SubResource("Resource_5sray"), SubResource("Resource_somvf"), SubResource("Resource_s74os"), SubResource("Resource_uvpt3"), SubResource("Resource_m40k2"), SubResource("Resource_6cla2"), SubResource("Resource_wbme1"), SubResource("Resource_wjhjv"), SubResource("Resource_mgx14"), SubResource("Resource_cy418"), SubResource("Resource_yht0y"), SubResource("Resource_k8fik")])
+end_function = Array[ExtResource("2_i2vin")]([SubResource("Resource_5a2bw"), SubResource("Resource_wsjw7")])
+metadata/_custom_type_script = "uid://btdnko88a0l3m"

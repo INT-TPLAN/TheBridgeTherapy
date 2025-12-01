@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=22 format=3 uid="uid://dclps1hi46nc2"]
+
+[ext_resource type="Script" uid="uid://concvvxdbq5wd" path="res://scripts/dialogue/dialogue.gd" id="1_a6gyk"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="2_xnqep"]
+[ext_resource type="Script" uid="uid://btdnko88a0l3m" path="res://scripts/dialogue/dialogue_group.gd" id="3_tsfjo"]
+[ext_resource type="Resource" uid="uid://c3ligl11mccda" path="res://FunctionGroups/target_fg_2.tres" id="3_xnqep"]
+
+[sub_resource type="Resource" id="Resource_a6gyk"]
+script = ExtResource("1_a6gyk")
+content = "对的 力所能及"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_xnqep"]
+script = ExtResource("1_a6gyk")
+content = "但你的能力其实足以令你惊叹"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_tsfjo"]
+script = ExtResource("1_a6gyk")
+content = "你只是没有摆脱习以为常的引力去发现而已。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_uq7mu"]
+script = ExtResource("1_a6gyk")
+content = "比如"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_lgio1"]
+script = ExtResource("1_a6gyk")
+content = "如果说桥是联通你和终点的介质"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_7uass"]
+script = ExtResource("1_a6gyk")
+content = "那桥"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_1rxqj"]
+script = ExtResource("1_a6gyk")
+content = "又何必是这样板板正正的实体桥呢？"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_h3lmv"]
+script = ExtResource("2_xnqep")
+target_path = NodePath("../../桥1")
+function_name = "hide_bridge"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_oank7"]
+script = ExtResource("2_xnqep")
+target_path = NodePath("../../player")
+function_name = "set_player_can_jump"
+function_arguments = [true]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_0ywyw"]
+script = ExtResource("2_xnqep")
+target_path = NodePath("../../引力桥")
+function_name = "show_bridge"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_qns2v"]
+script = ExtResource("1_a6gyk")
+content = "就像这个引力桥"
+functions = Array[ExtResource("2_xnqep")]([SubResource("Resource_h3lmv"), SubResource("Resource_oank7"), SubResource("Resource_0ywyw")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_k43ll"]
+script = ExtResource("1_a6gyk")
+content = "你可以利用它的引力"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_njthy"]
+script = ExtResource("1_a6gyk")
+content = "像荡秋千一样荡过去。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_fwte6"]
+script = ExtResource("2_xnqep")
+target_path = NodePath("../../player")
+function_name = "set_player_can_move"
+function_arguments = [true]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_o03ka"]
+script = ExtResource("2_xnqep")
+target_path = NodePath("../../终点")
+function_name = "update_event_function"
+function_arguments = [ExtResource("3_xnqep")]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_yjhia"]
+script = ExtResource("2_xnqep")
+target_path = NodePath("../../player/按键提示1")
+function_name = "show_tip"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_i5ayp"]
+script = ExtResource("2_xnqep")
+target_path = NodePath("../../player/跳跃icon")
+function_name = "show_tip"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("3_tsfjo")
+dialogues = Array[ExtResource("1_a6gyk")]([SubResource("Resource_a6gyk"), SubResource("Resource_xnqep"), SubResource("Resource_tsfjo"), SubResource("Resource_uq7mu"), SubResource("Resource_lgio1"), SubResource("Resource_7uass"), SubResource("Resource_1rxqj"), SubResource("Resource_qns2v"), SubResource("Resource_k43ll"), SubResource("Resource_njthy")])
+end_function = Array[ExtResource("2_xnqep")]([SubResource("Resource_fwte6"), SubResource("Resource_o03ka"), SubResource("Resource_yjhia"), SubResource("Resource_i5ayp")])
+metadata/_custom_type_script = "uid://btdnko88a0l3m"

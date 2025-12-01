@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=10 format=3 uid="uid://2ri5u2wrlfdl"]
+
+[ext_resource type="Script" uid="uid://concvvxdbq5wd" path="res://scripts/dialogue/dialogue.gd" id="1_bdkf0"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="2_foq6s"]
+[ext_resource type="Script" uid="uid://btdnko88a0l3m" path="res://scripts/dialogue/dialogue_group.gd" id="3_xmswc"]
+
+[sub_resource type="Resource" id="Resource_y6o3n"]
+script = ExtResource("1_bdkf0")
+content = "不过 没有哪座桥是凭空产生的。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_v6xsl"]
+script = ExtResource("1_bdkf0")
+content = "你需要去搭建这座桥。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_joaam"]
+script = ExtResource("1_bdkf0")
+content = "你环顾四周 看着其他人"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_k1e3k"]
+script = ExtResource("2_foq6s")
+target_path = NodePath("../../Camera2D")
+function_name = "set_use_mouse_look"
+function_arguments = [true]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_jgd0r"]
+script = ExtResource("2_foq6s")
+target_path = NodePath("../../environment")
+function_name = "set_others_bridge_can_show"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_2g4py"]
+script = ExtResource("2_foq6s")
+target_path = NodePath("../../player/鼠标icon")
+function_name = "show_tip"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("3_xmswc")
+dialogues = Array[ExtResource("1_bdkf0")]([SubResource("Resource_y6o3n"), SubResource("Resource_v6xsl"), SubResource("Resource_joaam")])
+end_function = Array[ExtResource("2_foq6s")]([SubResource("Resource_k1e3k"), SubResource("Resource_jgd0r"), SubResource("Resource_2g4py")])
+metadata/_custom_type_script = "uid://btdnko88a0l3m"

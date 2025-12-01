@@ -1,0 +1,122 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=21 format=3 uid="uid://dsmd13uwf56dr"]
+
+[ext_resource type="Script" uid="uid://concvvxdbq5wd" path="res://scripts/dialogue/dialogue.gd" id="1_gqxpp"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="2_12xai"]
+[ext_resource type="Script" uid="uid://btdnko88a0l3m" path="res://scripts/dialogue/dialogue_group.gd" id="2_lsluu"]
+
+[sub_resource type="Resource" id="Resource_87038"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../Camera2D")
+function_name = "set_cam_pos"
+function_arguments = [Vector2(0, -1500)]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_7muy7"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../Camera2D")
+function_name = "move_cam_to"
+function_arguments = [Vector2(0, 0), 7.0]
+wait_for_signal_to_continue = "cam_move_finished"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_gqxpp"]
+script = ExtResource("1_gqxpp")
+content = "这是一个关于桥的狂想。"
+can_skip = false
+functions = Array[ExtResource("2_12xai")]([SubResource("Resource_87038"), SubResource("Resource_7muy7")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_q1y6y"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../Camera2D")
+function_name = "move_cam_to"
+function_arguments = [Vector2(-200, 0), 2.0, 1, 8]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_avyxw"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../player")
+function_name = "show_player_func"
+wait_for_signal_to_continue = "show_player_finished"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_lsluu"]
+script = ExtResource("1_gqxpp")
+content = "这是你 松乔。"
+functions = Array[ExtResource("2_12xai")]([SubResource("Resource_q1y6y"), SubResource("Resource_avyxw")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_34qye"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../终点")
+function_name = "show_func"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_eqp7k"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../Camera2D")
+function_name = "move_cam_to"
+function_arguments = [Vector2(200, 0), 2.0, 2, 4]
+wait_for_signal_to_continue = "cam_move_finished"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_12xai"]
+script = ExtResource("1_gqxpp")
+content = "而这是 你所追求着的终点。"
+functions = Array[ExtResource("2_12xai")]([SubResource("Resource_34qye"), SubResource("Resource_eqp7k")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_ct2ct"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../Camera2D")
+function_name = "move_cam_to"
+function_arguments = [Vector2(0, 0), 2.0, 1, 8]
+wait_for_signal_to_continue = "cam_move_finished"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_jee24"]
+script = ExtResource("1_gqxpp")
+content = "你没法直接到达 中间是深渊。"
+functions = Array[ExtResource("2_12xai")]([SubResource("Resource_ct2ct")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_t2c2p"]
+script = ExtResource("1_gqxpp")
+content = "但是"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_ar83j"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../桥1")
+function_name = "show_bridge"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_p7724"]
+script = ExtResource("1_gqxpp")
+content = "如果中间有一座桥"
+functions = Array[ExtResource("2_12xai")]([SubResource("Resource_ar83j")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_e63jl"]
+script = ExtResource("1_gqxpp")
+content = "事情便不一样了。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_38bty"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../player")
+function_name = "set_player_can_move"
+function_arguments = [true]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_jimsl"]
+script = ExtResource("2_12xai")
+target_path = NodePath("../../player/按键提示1")
+function_name = "show_tip"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("2_lsluu")
+dialogues = Array[ExtResource("1_gqxpp")]([SubResource("Resource_gqxpp"), SubResource("Resource_lsluu"), SubResource("Resource_12xai"), SubResource("Resource_jee24"), SubResource("Resource_t2c2p"), SubResource("Resource_p7724"), SubResource("Resource_e63jl")])
+end_function = Array[ExtResource("2_12xai")]([SubResource("Resource_38bty"), SubResource("Resource_jimsl")])
+metadata/_custom_type_script = "uid://btdnko88a0l3m"

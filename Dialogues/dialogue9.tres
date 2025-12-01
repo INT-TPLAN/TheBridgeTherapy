@@ -1,0 +1,174 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=32 format=3 uid="uid://b82gnrjnleb70"]
+
+[ext_resource type="Script" uid="uid://concvvxdbq5wd" path="res://scripts/dialogue/dialogue.gd" id="1_nso6a"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="2_evpe8"]
+[ext_resource type="Script" uid="uid://btdnko88a0l3m" path="res://scripts/dialogue/dialogue_group.gd" id="3_ia3ti"]
+
+[sub_resource type="Resource" id="Resource_nso6a"]
+script = ExtResource("1_nso6a")
+content = "事实上"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_evpe8"]
+script = ExtResource("1_nso6a")
+content = "对于那些看似飞速前进的"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_ia3ti"]
+script = ExtResource("1_nso6a")
+content = "或许他们其实并不明白自己为何前进"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_mkm6h"]
+script = ExtResource("1_nso6a")
+content = "甚至不知道终点在哪。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_wvq8s"]
+script = ExtResource("1_nso6a")
+content = "不必与他人较真"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_7wc5w"]
+script = ExtResource("1_nso6a")
+content = "专注于自身"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_iy5eg"]
+script = ExtResource("1_nso6a")
+content = "想想自己走过了的漫漫长途"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_b7dgq"]
+script = ExtResource("1_nso6a")
+content = "和自己将要踏下的跬步"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_6kbgu"]
+script = ExtResource("2_evpe8")
+target_path = NodePath("../../environment")
+function_name = "dequeue_all_obs"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_yug88"]
+script = ExtResource("2_evpe8")
+target_path = NodePath("../../Camera2D")
+function_name = "set_use_mouse_look"
+function_arguments = [false]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_tdtnb"]
+script = ExtResource("1_nso6a")
+content = "那些令你焦虑的人将淡出你的视线。"
+can_skip = false
+functions = Array[ExtResource("2_evpe8")]([SubResource("Resource_6kbgu"), SubResource("Resource_yug88")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_2t0kw"]
+script = ExtResource("1_nso6a")
+content = "现在"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_6h58c"]
+script = ExtResource("1_nso6a")
+content = "我们回到起点"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_q1y6y"]
+script = ExtResource("2_evpe8")
+target_path = NodePath("../../Camera2D")
+function_name = "move_cam_to"
+function_arguments = [Vector2(-200, 0), 2.0, 1, 8]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_8oubk"]
+script = ExtResource("1_nso6a")
+content = "这是你 松乔"
+functions = Array[ExtResource("2_evpe8")]([SubResource("Resource_q1y6y")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_eqp7k"]
+script = ExtResource("2_evpe8")
+target_path = NodePath("../../Camera2D")
+function_name = "move_cam_to"
+function_arguments = [Vector2(200, 0), 2.0, 2, 4]
+wait_for_signal_to_continue = "cam_move_finished"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_d526m"]
+script = ExtResource("1_nso6a")
+content = "而这是 你所追求着的终点。"
+functions = Array[ExtResource("2_evpe8")]([SubResource("Resource_eqp7k")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_ct2ct"]
+script = ExtResource("2_evpe8")
+target_path = NodePath("../../Camera2D")
+function_name = "move_cam_to"
+function_arguments = [Vector2(0, 0), 2.0, 1, 8]
+wait_for_signal_to_continue = "cam_move_finished"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_uyoqi"]
+script = ExtResource("1_nso6a")
+content = "你看不到桥"
+functions = Array[ExtResource("2_evpe8")]([SubResource("Resource_ct2ct")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_uqi3w"]
+script = ExtResource("1_nso6a")
+content = "但不妨大胆迈出脚步。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_plndc"]
+script = ExtResource("1_nso6a")
+content = "脚下"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_deaik"]
+script = ExtResource("1_nso6a")
+content = "已是你最满意的桥梁"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_4umps"]
+script = ExtResource("1_nso6a")
+content = "而你"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_wafc1"]
+script = ExtResource("1_nso6a")
+content = "便是你的桥梁。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_annwa"]
+script = ExtResource("2_evpe8")
+target_path = NodePath("../../player")
+function_name = "set_player_can_move"
+function_arguments = [true]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_db6um"]
+script = ExtResource("2_evpe8")
+target_path = NodePath("../../player")
+function_name = "set_player_can_jump"
+function_arguments = [true]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_k3qjs"]
+script = ExtResource("2_evpe8")
+target_path = NodePath("../../桥1")
+function_name = "set_bridge_visible"
+function_arguments = [false]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_b2j6p"]
+script = ExtResource("2_evpe8")
+target_path = NodePath("../../桥1")
+function_name = "show_bridge"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("3_ia3ti")
+dialogues = Array[ExtResource("1_nso6a")]([SubResource("Resource_nso6a"), SubResource("Resource_evpe8"), SubResource("Resource_ia3ti"), SubResource("Resource_mkm6h"), SubResource("Resource_wvq8s"), SubResource("Resource_7wc5w"), SubResource("Resource_iy5eg"), SubResource("Resource_b7dgq"), SubResource("Resource_tdtnb"), SubResource("Resource_2t0kw"), SubResource("Resource_6h58c"), SubResource("Resource_8oubk"), SubResource("Resource_d526m"), SubResource("Resource_uyoqi"), SubResource("Resource_uqi3w"), SubResource("Resource_plndc"), SubResource("Resource_deaik"), SubResource("Resource_4umps"), SubResource("Resource_wafc1")])
+end_function = Array[ExtResource("2_evpe8")]([SubResource("Resource_annwa"), SubResource("Resource_db6um"), SubResource("Resource_k3qjs"), SubResource("Resource_b2j6p")])
+metadata/_custom_type_script = "uid://btdnko88a0l3m"

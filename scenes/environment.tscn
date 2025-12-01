@@ -1,0 +1,397 @@
+[gd_scene load_steps=30 format=3 uid="uid://dkainssorjvru"]
+
+[ext_resource type="Script" uid="uid://dof7ypn04yntb" path="res://scripts/environment.gd" id="1_0hc8i"]
+[ext_resource type="Texture2D" uid="uid://ccbbfttwsxfpd" path="res://art/imgs/环境/色彩背景3.PNG" id="2_yyxhd"]
+[ext_resource type="Texture2D" uid="uid://cejjwi84sius5" path="res://art/imgs/环境/色彩背景4.PNG" id="3_dmsi2"]
+[ext_resource type="Texture2D" uid="uid://cpyeupmvx0k13" path="res://art/imgs/环境/色彩背景2.PNG" id="4_ofm7x"]
+[ext_resource type="Texture2D" uid="uid://o5j4oal1k4uc" path="res://art/imgs/环境/色彩背景1.PNG" id="5_80s2q"]
+[ext_resource type="Texture2D" uid="uid://c1ytjgg758g72" path="res://art/imgs/环境/色彩前景.PNG" id="6_3am05"]
+[ext_resource type="Texture2D" uid="uid://lb6qolrc5sal" path="res://art/imgs/环境/颜色背景5.PNG" id="7_1afuj"]
+[ext_resource type="Script" uid="uid://r8uvqlaai5yx" path="res://scripts/他人桥.gd" id="8_375xh"]
+[ext_resource type="Texture2D" uid="uid://duh8d5b5jhuty" path="res://art/imgs/环境/他人桥2.png" id="9_6p5pf"]
+[ext_resource type="Texture2D" uid="uid://7ye88e7t03fp" path="res://art/imgs/环境/他人桥3.png" id="10_t8dep"]
+[ext_resource type="Texture2D" uid="uid://b7nxcbool2gcy" path="res://art/imgs/环境/平台1.PNG" id="11_cofmf"]
+[ext_resource type="Texture2D" uid="uid://18grpi1302c" path="res://art/imgs/环境/平台2.PNG" id="12_f0uwl"]
+[ext_resource type="Texture2D" uid="uid://ct22nt2cpxb3e" path="res://art/imgs/环境/他人桥1.png" id="13_bwu6h"]
+[ext_resource type="Texture2D" uid="uid://bejifatknw71h" path="res://art/imgs/闪屏/1.png" id="14_80s2q"]
+[ext_resource type="Texture2D" uid="uid://dhbmt4a2fnv3t" path="res://art/imgs/闪屏/2.png" id="15_3am05"]
+[ext_resource type="Texture2D" uid="uid://dao6n14ocqpk" path="res://art/imgs/闪屏/3.png" id="16_1afuj"]
+[ext_resource type="Texture2D" uid="uid://mcscl2qkqv7q" path="res://art/imgs/闪屏/4.png" id="17_375xh"]
+
+[sub_resource type="GDScript" id="GDScript_13vyy"]
+script/source = "extends Area2D
+@onready var environment: Node2D = $\"../..\"
+
+
+var can_show := false
+var showed := false
+
+#音效
+var last_sound_index
+var random_index
+
+func _ready():
+	visible = true
+	modulate.a = 0
+
+func set_can_show():
+	can_show = true
+
+func dequeue():
+	var tween = create_tween()
+	tween.tween_property(self, \"modulate:a\", 0, 1.5).set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	await tween.finished
+	call_deferred(\"queue_free\")
+
+func _on_mouse_entered() -> void:
+	if can_show:
+		if not showed:
+			#音效
+			if not last_sound_index:
+				last_sound_index = 1
+			random_index = randi_range(1, 5)
+			# print(random_index)
+			while random_index == last_sound_index:
+				random_index = randi_range(1, 5)
+			last_sound_index = random_index
+			AudioManager.play_sfx(\"S\" + str(random_index))
+
+			environment.call(\"add_showed_ob\")
+			showed = true
+			var tween = create_tween()
+			tween.tween_property(self, \"modulate:a\", 1, 1.5).set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwb5c"]
+size = Vector2(381.08643, 1296.6364)
+
+[sub_resource type="GDScript" id="GDScript_anuwc"]
+script/source = "extends Area2D
+@onready var environment: Node2D = $\"../..\"
+
+
+var can_show := false
+var showed := false
+
+#音效
+var last_sound_index
+var random_index
+
+func _ready():
+	visible = true
+	modulate.a = 0
+
+func set_can_show():
+	can_show = true
+
+func dequeue():
+	var tween = create_tween()
+	tween.tween_property(self, \"modulate:a\", 0, 1.5).set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	await tween.finished
+	call_deferred(\"queue_free\")
+
+func _on_mouse_entered() -> void:
+	if can_show:
+		if not showed:
+			#音效
+			if not last_sound_index:
+				last_sound_index = 1
+			random_index = randi_range(1, 5)
+			# print(random_index)
+			while random_index == last_sound_index:
+				random_index = randi_range(1, 5)
+			last_sound_index = random_index
+			AudioManager.play_sfx(\"S\" + str(random_index))
+
+			environment.call(\"add_showed_ob\")
+			showed = true
+			var tween = create_tween()
+			tween.tween_property(self, \"modulate:a\", 1, 1.5).set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7kj2"]
+size = Vector2(288, 472)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oybs"]
+size = Vector2(264, 328)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_picej"]
+size = Vector2(264, 344)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13vyy"]
+size = Vector2(499.69226, 472)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uta0w"]
+size = Vector2(20, 208)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6p5pf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_80s2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3am05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1afuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_375xh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_72jnp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ypvfd"]
+resource_name = "flash"
+length = 0.20000334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n0djd"]
+_data = {
+&"RESET": SubResource("Animation_72jnp"),
+&"flash": SubResource("Animation_ypvfd")
+}
+
+[node name="environment" type="Node2D"]
+script = ExtResource("1_0hc8i")
+
+[node name="背景颜色" type="Node2D" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="背景颜色"]
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(-100, 200)
+
+[node name="Img0666" type="Sprite2D" parent="背景颜色/Parallax2D"]
+texture_filter = 1
+position = Vector2(143.99998, 7.9999995)
+rotation = 0.5497787
+scale = Vector2(0.691, 0.691)
+texture = ExtResource("2_yyxhd")
+
+[node name="Parallax2D2" type="Parallax2D" parent="背景颜色"]
+scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(500, 150)
+
+[node name="Img0667" type="Sprite2D" parent="背景颜色/Parallax2D2"]
+modulate = Color(1, 1, 1, 0.56078434)
+texture_filter = 1
+position = Vector2(47.999996, 63.999996)
+scale = Vector2(0.611, 0.611)
+texture = ExtResource("3_dmsi2")
+
+[node name="Parallax2D3" type="Parallax2D" parent="背景颜色"]
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(500, 0)
+
+[node name="Img0666" type="Sprite2D" parent="背景颜色/Parallax2D3"]
+modulate = Color(1, 1, 1, 0.74509805)
+texture_filter = 1
+position = Vector2(220, 287.99997)
+rotation = 1.0733775
+scale = Vector2(0.857, 0.857)
+texture = ExtResource("4_ofm7x")
+
+[node name="Img0665" type="Sprite2D" parent="背景颜色/Parallax2D3"]
+texture_filter = 1
+position = Vector2(-31.999998, 63.999996)
+scale = Vector2(0.8260558, 0.8260558)
+texture = ExtResource("4_ofm7x")
+
+[node name="Parallax2D4" type="Parallax2D" parent="背景颜色"]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(267.09, 175.28)
+
+[node name="Img0664" type="Sprite2D" parent="背景颜色/Parallax2D4"]
+modulate = Color(1, 1, 1, 0.6901961)
+texture_filter = 1
+position = Vector2(-8, 5.684342e-14)
+rotation = 0.12915437
+scale = Vector2(0.716, 0.716)
+texture = ExtResource("5_80s2q")
+region_enabled = true
+region_rect = Rect2(0, 0, 1455.9098, 953.7932)
+
+[node name="Parallax2D5" type="Parallax2D" parent="背景颜色"]
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(0, 21.53)
+
+[node name="Img0670" type="Sprite2D" parent="背景颜色/Parallax2D5"]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, -56)
+scale = Vector2(1.602, 0.891)
+texture = ExtResource("6_3am05")
+
+[node name="Parallax2D6" type="Parallax2D" parent="背景颜色"]
+scroll_scale = Vector2(0.6, 0.6)
+scroll_offset = Vector2(500, 0)
+
+[node name="Img0671" type="Sprite2D" parent="背景颜色/Parallax2D6"]
+texture_filter = 1
+scale = Vector2(0.9798089, 0.9798089)
+texture = ExtResource("7_1afuj")
+
+[node name="他人桥3" type="Parallax2D" parent="."]
+z_index = -1
+scale = Vector2(0.7, 0.7)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(300, 279.115)
+
+[node name="Area" type="Area2D" parent="他人桥3"]
+position = Vector2(-336, -688)
+collision_layer = 4
+collision_mask = 4
+script = SubResource("GDScript_13vyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="他人桥3/Area"]
+position = Vector2(760, 512)
+texture = ExtResource("9_6p5pf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="他人桥3/Area"]
+position = Vector2(958.8572, 620.6929)
+scale = Vector2(1.030853, 0.3261186)
+shape = SubResource("RectangleShape2D_pwb5c")
+
+[node name="他人桥2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(-900, -150)
+
+[node name="Area" type="Area2D" parent="他人桥2"]
+position = Vector2(648, 160)
+collision_layer = 4
+collision_mask = 4
+script = SubResource("GDScript_anuwc")
+
+[node name="Sprite2D" type="Sprite2D" parent="他人桥2/Area"]
+texture = ExtResource("10_t8dep")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="他人桥2/Area"]
+position = Vector2(244, 222)
+shape = SubResource("RectangleShape2D_l7kj2")
+
+[node name="platform1" type="StaticBody2D" parent="."]
+position = Vector2(-252, 289)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform1"]
+shape = SubResource("RectangleShape2D_6oybs")
+
+[node name="Img0668" type="Sprite2D" parent="platform1"]
+texture_filter = 1
+position = Vector2(4, 12)
+texture = ExtResource("11_cofmf")
+region_enabled = true
+region_rect = Rect2(389.28998, 585.186, 312.4391, 402.6277)
+
+[node name="platform2" type="StaticBody2D" parent="."]
+position = Vector2(280, 301)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
+position = Vector2(4, -4)
+shape = SubResource("RectangleShape2D_picej")
+
+[node name="Img0669" type="Sprite2D" parent="platform2"]
+texture_filter = 1
+texture = ExtResource("12_f0uwl")
+region_enabled = true
+region_rect = Rect2(841.68317, 560.57245, 349.47003, 441.7094)
+
+[node name="他人桥1" type="Parallax2D" parent="."]
+scale = Vector2(1.56, 1.56)
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(100, -200)
+
+[node name="Area" type="Area2D" parent="他人桥1"]
+position = Vector2(-736, 128)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("8_375xh")
+
+[node name="Sprite2D" type="Sprite2D" parent="他人桥1/Area"]
+texture = ExtResource("13_bwu6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="他人桥1/Area"]
+position = Vector2(-106.15393, 200.00002)
+shape = SubResource("RectangleShape2D_13vyy")
+
+[node name="boundray1" type="StaticBody2D" parent="."]
+position = Vector2(-392, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundray1"]
+shape = SubResource("RectangleShape2D_uta0w")
+
+[node name="boundray2" type="StaticBody2D" parent="."]
+position = Vector2(424, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundray2"]
+shape = SubResource("RectangleShape2D_uta0w")
+
+[node name="闪屏" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(-80, 32)
+scale = Vector2(1.41, 1.41)
+sprite_frames = SubResource("SpriteFrames_6p5pf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="闪屏"]
+libraries = {
+&"": SubResource("AnimationLibrary_n0djd")
+}
+
+[connection signal="mouse_entered" from="他人桥3/Area" to="他人桥3/Area" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="他人桥2/Area" to="他人桥2/Area" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="他人桥1/Area" to="他人桥1/Area" method="_on_mouse_entered"]

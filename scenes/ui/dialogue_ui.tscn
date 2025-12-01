@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://1j46gtlsa8jv"]
+
+[ext_resource type="Script" uid="uid://bxbgg2qjlljk1" path="res://scripts/dialogue/dialogue_manager.gd" id="1_sd0pw"]
+[ext_resource type="FontFile" uid="uid://bpuqtq3i5ajdi" path="res://art/fonts/CHIRONGOROUNDTC-600SB.OTF" id="1_y3syv"]
+[ext_resource type="Resource" uid="uid://dsmd13uwf56dr" path="res://Dialogues/dialogue1.tres" id="2_ysedr"]
+[ext_resource type="Texture2D" uid="uid://ca4xn24uouuv0" path="res://art/imgs/ui/next_icon.png" id="4_awmck"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qn8cy"]
+font = ExtResource("1_y3syv")
+font_size = 35
+font_color = Color(0.76469505, 0.39772743, 0.8306817, 0.69411767)
+shadow_color = Color(0.13, 0.13, 0.13, 0)
+shadow_offset = Vector2(-2.42, 3.47)
+
+[node name="对话" type="Control" node_paths=PackedStringArray("text_box")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sd0pw")
+text_box = NodePath("MarginContainer/TextBox")
+main_dialogue = ExtResource("2_ysedr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 168.0
+
+[node name="TextBox" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "测试文本测试文本测试文本测试文本测试文本"
+label_settings = SubResource("LabelSettings_qn8cy")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="NextIcon" type="Sprite2D" parent="MarginContainer"]
+modulate = Color(0.7652599, 0.3984, 0.83, 0.69411767)
+position = Vector2(576, 128)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("4_awmck")
+
+[connection signal="gui_input" from="." to="." method="_on_click"]

@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=17 format=3 uid="uid://cv5b0nhw684fd"]
+
+[ext_resource type="Script" uid="uid://concvvxdbq5wd" path="res://scripts/dialogue/dialogue.gd" id="1_jlxow"]
+[ext_resource type="Script" uid="uid://bh5rnbdq81syh" path="res://scripts/dialogue/dialogue_function.gd" id="2_u8q41"]
+[ext_resource type="Script" uid="uid://btdnko88a0l3m" path="res://scripts/dialogue/dialogue_group.gd" id="3_fhn4c"]
+
+[sub_resource type="Resource" id="Resource_lsluu"]
+script = ExtResource("1_jlxow")
+content = "看 这就是我们一直逃避的东西"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_avyxw"]
+script = ExtResource("2_u8q41")
+target_path = NodePath("../../player")
+function_name = "show_player_func"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_sov1t"]
+script = ExtResource("2_u8q41")
+target_path = NodePath("../../Camera2D")
+function_name = "set_use_mouse_look"
+function_arguments = [false]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_akxwy"]
+script = ExtResource("2_u8q41")
+target_path = NodePath("../../终点")
+function_name = "show_func"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_jlxow"]
+script = ExtResource("1_jlxow")
+content = "当它突然找上门时"
+functions = Array[ExtResource("2_u8q41")]([SubResource("Resource_avyxw"), SubResource("Resource_sov1t"), SubResource("Resource_akxwy")])
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_u8q41"]
+script = ExtResource("1_jlxow")
+content = "就是这样措手不及"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_fhn4c"]
+script = ExtResource("1_jlxow")
+content = "没关系 我在这里陪着你。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_0vvyn"]
+script = ExtResource("1_jlxow")
+content = "你觉着似乎周围人人都在稳步前进"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_wfswk"]
+script = ExtResource("1_jlxow")
+content = "似乎人人都比你快"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_ec2uw"]
+script = ExtResource("1_jlxow")
+content = "但是"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_6hlms"]
+script = ExtResource("1_jlxow")
+content = "不妨再环顾一下四周。"
+metadata/_custom_type_script = "uid://concvvxdbq5wd"
+
+[sub_resource type="Resource" id="Resource_jfw6b"]
+script = ExtResource("2_u8q41")
+target_path = NodePath("../../Camera2D")
+function_name = "set_use_mouse_look"
+function_arguments = [true]
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[sub_resource type="Resource" id="Resource_h6s36"]
+script = ExtResource("2_u8q41")
+target_path = NodePath("../../environment")
+function_name = "set_others_bridge_can_show"
+metadata/_custom_type_script = "uid://bh5rnbdq81syh"
+
+[resource]
+script = ExtResource("3_fhn4c")
+dialogues = Array[ExtResource("1_jlxow")]([SubResource("Resource_lsluu"), SubResource("Resource_jlxow"), SubResource("Resource_u8q41"), SubResource("Resource_fhn4c"), SubResource("Resource_0vvyn"), SubResource("Resource_wfswk"), SubResource("Resource_ec2uw"), SubResource("Resource_6hlms")])
+end_function = Array[ExtResource("2_u8q41")]([SubResource("Resource_jfw6b"), SubResource("Resource_h6s36")])
+metadata/_custom_type_script = "uid://btdnko88a0l3m"
